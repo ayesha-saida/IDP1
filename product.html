@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+  <!--Css link-->
+  <link rel="stylesheet" href="style.css">
+  <!--Icon CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <!--navbar-->
+    <nav class="top-header" id="top-header">
+      <a href="home.html">Home</a>
+      <a href="help&support.html">Help & Support </a>
+      <a href="buyerlogin.html">Login</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
+    <!-- Hamburger Menu -->
+
+    <!--middle heading or middle navbar-->
+    <div class="middle-header">
+      <h2 class="h2-text">GreenRoof Market</h2>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search in GreenRoof">
+        <button onclick="searchProduct()"><i class="ri-search-line"></i></button>
+      </div>
+      <div class="category-parent">
+        <select class="form-select" id="categoryFilter">
+          <option value="all">All Types</option>
+          <option value="vegetables">Vegetables</option>
+          <option value="leaf-vegetables">Leaf vegetables</option>
+          <option value="fruits">Fruits</option>
+        </select>
+      </div>
+      <div class="area-parent">
+        <select class="form-select" id="areaFilter">
+          <option value="">All Areas</option>
+          <option value="banani">Banani</option>
+          <option value="mohakhali">Mohakhali</option>
+          <option value="gulshan">Gulshan</option>
+          <option value="mogbazar">Mogbazar</option>
+          <option value="rampura">Rampura</option>
+          <option value="bashaboo">Bashaboo</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!--Product list-->
+  <div class="product-grid" id="dynamic-product-grid">
+    <div class="product-card" data-category="vegetables" data-area="mohakhali" data-name="tomato">
+      <a href="#">
+        <img src="image/tomato.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Tomato</span><br>
+          <p>30tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts">
+          <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-tomato" data-name="tomato">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('tomato',30, 'image/tomato.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="vegetables" data-area="notun_bazar" data-name="cucumber">
+      <a href="#">
+        <img src="image/cucumber.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Cucumber</span><br>
+          <p>40tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts">
+          <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-cucumber" data-name="cucumber">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('cucumber', 40, 'image/cucumber.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+
+    <div class="product-card" data-category="leaf-vegetables" data-area="rampura" data-name="lettuce">
+      <a href="#">
+        <img src="image/lettuce.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Lettuce</span><br>
+          <p>50tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts">
+          <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-lettuce" data-name="lettuce">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('lettuce', 50, 'image/lettuce.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="leaf-vegetables" data-area="mogbazar" data-name="spinach">
+      <a href="#">
+        <img src="image/spinach.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Spinach</span><br>
+          <p>20tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-spinach" data-name="spinach">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('spinach', 20, 'image/spinch.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="vegetables" data-area="bashaboo" data-name="capsicum">
+      <a href="#">
+        <img src="image/capsicum.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Capsicum</span><br>
+          <p>80tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-capsicum" data-name="capsicum">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('capsicum', 80, 'image/capsicum.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="vegetables" data-area="gulshan" data-name="pumpkin">
+      <a href="#">
+        <img src="image/pumpkin.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Pumpkin</span><br>
+          <p>50tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-pumpkin" data-name="pumpkin">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('pumpkin', 50, 'image/pumpkin.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="fruits" data-area="banani" data-name="watermelon">
+      <a href="#">
+        <img src="image/watermelon.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Watermelon</span><br>
+          <p>250tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"><i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-watermelon" data-name="watermelon">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('watermelon', 250, 'image/watermelon.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="fruits" data-area="bashaboo" data-name="banana">
+      <a href="#">
+        <img src="image/banana.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Banana</span><br>
+          <p>40tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-banana" data-name="banana">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('banana', 40, 'image/banana.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="fruits" data-area="bashaboo" data-name="pineapple">
+      <a href="#">
+        <img src="image/pineapple.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Pineapple</span><br>
+          <p>30tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-pineapple" data-name="pineapple">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('pineapple', 30, 'image/pineapple.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="vegetables" data-area="bashaboo" data-name="cauliflower">
+      <a href="#">
+        <img src="image/cauliflower.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Cauliflower</span><br>
+          <p>40tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-cauliflower" data-name="cauliflower">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('cauliflower', 40, 'image/cauliflower.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="vegetables" data-area="rampura" data-name="corn">
+      <a href="#">
+        <img src="image/corn.jpg" alt="Product" width="100">
+        <div class="product-info">
+          <span class="product-name">Corn</span><br>
+          <p>50tk</p>
+        </div>
+      </a>
+      <div class="cart-actions">
+        <div class="carts"> <i class="ri-shopping-cart-line"></i>
+          <p>Cart: </p>
+          <span class="cart-count" id="cart-count-corn" data-name="corn">0</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('corn', 50, 'image/corn.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer started-->
+  <footer class="footer-last">
+    <p>About | Contact | Terms</p>
+    <p>copyright@ayeshasultana2025</p>
+  </footer>
+  <!--footer end-->
+
+  <script src="script1.js"></script>
+</body>
+
+</html>

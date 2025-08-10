@@ -1,0 +1,195 @@
+/* Base Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #eee;
+  color: #333;
+  line-height: 1.5;
+}
+
+h2,
+h3 {
+  margin-top: 20px;
+  color: #222;
+}
+
+/* Address & Input Fields */
+input[type='text'],
+input[type='tel'],
+textarea,
+input[type='datetime-local'] {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+/* Cart Section */
+#cart-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.qty-btn {
+  padding: 5px 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: #0056b3;
+}
+
+/* Subtotal */
+#subtotal {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Payment Section */
+.payment-card-list-greenroof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+.payment-card-list-greenroof span {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #ddd;
+}
+
+.payment-card-list-greenroof span:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.payment-card-list-greenroof span.selected {
+  border: 2px solid #28a745;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
+}
+
+.payment-icon {
+  height: 50px;
+  width: auto;
+}
+
+/* Invoice */
+#invoice {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+#invoice p {
+  margin: 10px 0;
+}
+
+/* Buttons */
+#footer-buttons {
+  display: none;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#footer-buttons button {
+  padding: 10px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 150px;
+}
+
+#footer-buttons button:first-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+#footer-buttons button:last-child {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Responsive Enhancements */
+@media screen and (max-width: 600px) {
+  #cart-container,
+  #invoice,
+  textarea,
+  input[type='datetime-local'] {
+    width: 100%;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-controls {
+    margin-top: 8px;
+  }
+  /*payment methods will not overflow.*/
+  .payment-card-list-greenroof {
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .payment-card-list-greenroof span {
+    scroll-snap-align: center;
+  }
+  #footer-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

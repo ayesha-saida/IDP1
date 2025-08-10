@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenRoof Home page</title>
+  <!-- CSS sheet -->
+  <link rel="stylesheet" href="style.css">
+  <!--Icon connecting link-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body class="main-content">
+  <header>
+    <!--navbar-->
+    <nav class="top-header" id="top-header">
+      <a href="home.html">Home</a>
+      <a href="help&support.html">Help & Support</a>
+      <a href="buyerlogin.html">Login</a>
+      <a href="checkOut.html">Checkout</a>
+    </nav>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
+    <!-- Hamburger Menu -->
+
+    <!--middle heading or middle navbar-->
+    <div class="middle-header">
+      <h2 class="h2-text">GreenRoof Market</h2>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search in GreenRoof">
+        <button onclick="searchProduct()"><i class="ri-search-line"></i></button>
+      </div>
+      <!--  <div class="menu">
+        <i class="ri-menu-line" id="menu-btn"></i>
+      </div>-->
+      <div class="category-parent">
+        <select class="form-select" id="categoryFilter">
+          <option value="all">All Types</option>
+          <option value="vegetables">Vegetables</option>
+          <option value="leaf-vegetables">Leaf vegetables</option>
+          <option value="fruits">Fruits</option>
+        </select>
+      </div>
+      <div class="area-parent">
+        <select class="form-select" id="areaFilter">
+          <option value="">All Areas</option>
+          <option value="banani">Banani</option>
+          <option value="mohakhali">Mohakhali</option>
+          <option value="gulshan">Gulshan</option>
+          <option value="mogbazar">Mogbazar</option>
+          <option value="rampura">Rampura</option>
+          <option value="bashaboo">Bashaboo</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!--cover image-->
+    <div class="img-college">
+      <img src="image/hero_5.jpg" alt="Slide 1">
+      <img src="image/hero2.jpg" alt="Slide 2">
+      <img src="image/hero3.jpg" alt="Slide 3">
+    </div>
+
+    <!--headline for about section -->
+    <div class="headline">
+      <h2>A Rooftop Garden Crops Selling Website.</h2>
+      <p class="headline-text">Rooftop gardening promotes healthy living, reduces waste, and connects people to their
+        food source. <br> Choose
+        fresh,
+        local, and green!</p>
+    </div>
+
+    <!--another page for more products-->
+    <div class="more-product">
+      <a href="product.html">View All Products</a>
+    </div>
+
+    <!--Product list-->
+    <div class="product-grid" id="dynamic-product-grid">
+      <div class="product-card" data-category="vegetables" data-area="mohakhali" data-name="tomato">
+        <a href="#">
+          <img src="image/tomato.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Tomato</span><br>
+            <p>30tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts">
+            <i class="ri-shopping-cart-line"></i>
+            <p> Cart: </p>
+            <span class="cart-count" id="cart-count-tomato" data-name="tomato">0</span>
+          </div>
+
+          <button class="add-to-cart" onclick="addToCart('tomato',30, 'image/tomato.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vegetables" data-area="bashaboo" data-name="cucumber">
+        <a href="#">
+          <img src="image/cucumber.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Cucumber</span><br>
+            <p>40tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p>
+            <span class="cart-count" id="cart-count-cucumber" data-name="cucumber">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('cucumber', 40, 'image/cucumber.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+
+      <div class="product-card" data-category="leaf-vegetables" data-area="rampura" data-name="lettuce">
+        <a href="#">
+          <img src="image/lettuce.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Lettuce</span><br>
+            <p>50tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-lettuce" data-name="lettuce">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('lettuce', 50, 'image/lettuce.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="leaf-vegetables" data-area="mogbazar" data-name="spinach">
+        <a href="#">
+          <img src="image/spinach.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Spinach</span><br>
+            <p>20tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-spinach" data-name="spinach">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('spinach', 20, 'image/spinch.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vegetables" data-area="bashaboo" data-name="capsicum">
+        <a href="#">
+          <img src="image/capsicum.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Capsicum</span><br>
+            <p>80tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-capsicum" data-name="capsicum">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('capsicum', 80, 'image/capsicum.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vegetables" data-area="gulshan" data-name="pumpkin">
+        <a href="#">
+          <img src="image/pumpkin.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Pumpkin</span><br>
+            <p>50tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts"> <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-pumpkin" data-name="pumpkin">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('pumpkin', 50, 'image/pumpkin.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fruits" data-area="banani" data-name="watermelon">
+        <a href="#">
+          <img src="image/watermelon.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Watermelon</span><br>
+            <p>250tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts"> <i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-watermelon" data-name="watermelon">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('watermelon', 250, 'image/watermelon.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fruits" data-area="bashaboo" data-name="banana">
+        <a href="#">
+          <img src="image/banana.jpg" alt="Product" width="100">
+          <div class="product-info">
+            <span class="product-name">Banana</span><br>
+            <p>40tk</p>
+          </div>
+        </a>
+        <div class="cart-actions">
+          <div class="carts"><i class="ri-shopping-cart-line"></i>
+            <p>Cart: </p> <span class="cart-count" id="cart-count-banana" data-name="banana">0</span>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('banana', 40, 'image/banana.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--Customer care services-->
+  <div class="customer-care">
+    <h1>Customer Care</h1>
+    <div>
+      <ul class="services">
+        <li><a href="helpCenter.html">Help Centre</a></li>
+        <li><a href="howToBuy.html">How to Buy</a></li>
+        <li><a href="returnsAndRefunds.html">Returns and Refunds</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="terms&Condition.html">Terms and Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Payment option-->
+  <div class="payment-method">
+    <div>
+      <h2 class="payment-h2">Payment Method </h2>
+      <p> We provide different payment option.</p>
+    </div>
+    <div class="payment-card-list">
+      <a href=""> <img class="payment-icon" src="./icon_image/cod.png" alt="cod"
+          data-spm-anchor-id="a2a0e.tm80335411.0.i0.735212f7FAcxZ3"></a>
+
+      <a href=""><img class="payment-icon" src="./icon_image/bkash.png" alt="bKash"></a>
+
+      <a href=""> <img class="payment-icon" src="./icon_image/nagad.png" alt="nagad"></a>
+
+      <a href=""><img class="payment-icon" src="./icon_image/rocket.png" alt="rocket">
+      </a>
+    </div>
+  </div>
+
+  <!--footer-->
+  <footer class="footer-last">
+    <p>About | Contact | Terms</p>
+    <p>copyright@ayeshasultana2025</p>
+  </footer>
+  <!--footer end-->
+  <script src="script1.js"></script>
+</body>
+
+</html>
