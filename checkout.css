@@ -1,12 +1,30 @@
 /* Base Styling */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;
   background-color: #eee;
   color: #333;
   line-height: 1.5;
 }
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 31px 20px;
+  position: relative;
+}
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 19px;
+}
 
+.top-header a {
+  margin-left: 40px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  cursor: pointer;
+}
 h2,
 h3 {
   margin-top: 20px;
