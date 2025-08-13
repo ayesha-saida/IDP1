@@ -20,7 +20,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     enteredPassword === user.password
   ) {
     alert('Login successful!');
-    window.location.href = 'home.html'; // ✅ Change to your dashboard/home page
+    window.location.href = 'index.html'; // ✅ Change to your dashboard/home page
   } else {
     alert('Invalid email or password.');
   }
