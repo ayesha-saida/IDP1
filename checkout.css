@@ -4,13 +4,17 @@ body {
   margin: 0;
   background-color: #eee;
   color: #333;
-  line-height: 1.5;
 }
 header {
   background-color: #4caf50;
   color: white;
   padding: 31px 20px;
   position: relative;
+}
+.body-style {
+  /*text-align: center;*/
+  display: grid;
+  place-items: center;
 }
 .top-header {
   display: flex;
@@ -32,10 +36,10 @@ h3 {
 }
 
 /* Address & Input Fields */
-input[type='text'],
-input[type='tel'],
-textarea,
-input[type='datetime-local'] {
+#customer-name,
+#customer-phone,
+#address,
+#delivery-time {
   width: 100%;
   max-width: 500px;
   padding: 10px;
@@ -48,6 +52,7 @@ input[type='datetime-local'] {
 /* Cart Section */
 #cart-container {
   margin-top: 30px;
+  /* margin-left: 640px;*/
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
@@ -113,6 +118,7 @@ input[type='datetime-local'] {
 }
 
 .payment-card-list-greenroof span {
+  align-items: center;
   cursor: pointer;
   padding: 5px;
   border-radius: 8px;
@@ -158,6 +164,8 @@ input[type='datetime-local'] {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  /* justify-content: center;
+ align-items: center;*/
 }
 
 #footer-buttons button {

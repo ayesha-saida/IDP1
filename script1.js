@@ -1,4 +1,4 @@
-/*1 - unify or chain all filter together such as search,category and distance*/
+/*1 - all filter together such as search,category and distance*/
 
 function applyFilters() {
   const searchInput =
@@ -35,7 +35,7 @@ function applyFilters() {
 
 /*2 - Update Event Listeners to Use Unified Filtering*/
 
-// Search on Enter
+// Search on Enter press
 document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('searchInput')
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('categoryFilter')
     ?.addEventListener('change', applyFilters);
+
   document
     .getElementById('areaFilter')
     ?.addEventListener('change', applyFilters);
@@ -59,7 +60,9 @@ function updateCartDisplay() {
 
   // Update total cart count (if needed)
   const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   const globalCartCountEl = document.getElementById('cart-count');
+
   if (globalCartCountEl) {
     globalCartCountEl.textContent = totalCount;
   }
@@ -86,7 +89,7 @@ function addToCart(name, price, img) {
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartDisplay();
 }
-/*hamburger*/
+/*hamburger appear when display became smaller*/
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const header = document.getElementById('top-header');
 

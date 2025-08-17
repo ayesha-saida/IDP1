@@ -19,58 +19,64 @@
       <a href="checkOut.html">Checkout</a>
     </nav>
   </header>
-  <h2><i class="ri-shopping-cart-line"></i> Checkout Page</h2>
+  <div class="body-style">
+    <h2><i class="ri-shopping-cart-line"></i> Checkout Page</h2>
 
-  <h3> <i class="ri-survey-line"></i> Order Details</h3>
-  <label for="name">Full Name:</label><br>
-  <input type="text" id="customer-name" placeholder="Enter your full name" required><br><br>
+    <h3> <i class="ri-survey-line"></i> Order Details</h3>
 
-  <label for="phone">Phone Number:</label><br>
-  <input type="tel" id="customer-phone" placeholder="Enter your phone number" required><br><br>
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="customer-name" placeholder="Enter your full name" required><br><br>
 
-  <label for="address">Delivery Address:</label><br>
-  <textarea id="address" rows="3" placeholder="Enter your full delivery address"></textarea><br><br>
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="customer-phone" placeholder="Enter your phone number" required><br><br>
 
-  <label for="delivery-time">Select Delivery Date & Time:</label><br>
-  <input type="datetime-local" id="delivery-time"><br><br>
+    <label for="address">Delivery Address:</label><br>
+    <textarea id="address" rows="3" placeholder="Enter your full delivery address"></textarea><br><br>
 
-  <h2><i class="ri-shopping-cart-line"></i> Cart: <span id="cart-count">0</span></h2>
-  <div id="cart-container">
-    <h3>Your Cart</h3>
-    <div id="cart-items"></div>
-    <div id="subtotal"></div>
-  </div>
-  <h3>Select Payment Method</h3>
+    <label for="delivery-time">Select Delivery Date & Time:</label><br>
+    <input type="datetime-local" id="delivery-time"><br><br>
 
-  <!--Payment option-->
-  <div class="payment-card-list-greenroof" id="payment-options">
-    <span data-method="Cash on Delivery"><img class="payment-icon" src="./icon_image/cod.png" alt="cod"></span>
+    <h2><i class="ri-shopping-cart-line"></i> Cart: <span id="cart-count">0</span></h2>
+    <div id="cart-container">
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div id="subtotal"></div>
+    </div>
+    <h3>Select Payment Method</h3>
 
-    <span data-method="bKash"><img class="payment-icon" src="./icon_image/bkash.png" alt="bKash"></span>
-    <span data-method="Nagad"><img class="payment-icon" src="./icon_image/nagad.png" alt="nagad"></span>
-    <span data-method="Rocket"><img class="payment-icon" src="./icon_image/rocket.png" alt="rocket"></span>
-  </div>
+    <!--Payment option-->
+    <div class="payment-card-list-greenroof" id="payment-options">
+      <span data-method="Cash on Delivery"><img class="payment-icon" src="./icon_image/cod.png" alt="cod"></span>
 
-  <!--Order invoice-->
-  <div id="invoice">
-    <h3>🧾 Invoice Preview</h3>
-    <p><strong>Name:</strong><span id="invoice-name"></span> </p>
+      <span data-method="bKash"><img class="payment-icon" src="./icon_image/bkash.png" alt="bKash"></span>
 
-    <p><strong>Phone:</strong><span id="invoice-phone"></span> </p>
+      <span data-method="Nagad"><img class="payment-icon" src="./icon_image/nagad.png" alt="nagad"></span>
 
-    <p><strong>Address:</strong> <span id="invoice-address"></span></p>
+      <span data-method="Rocket"><img class="payment-icon" src="./icon_image/rocket.png" alt="rocket"></span>
+    </div>
 
-    <p><strong>Delivery Time:</strong> <span id="invoice-delivery-time"></span></p>
+    <!--Order invoice-->
+    <div id="invoice">
+      <h3>🧾 Invoice Preview</h3>
+      <p><strong>Name:</strong><span id="invoice-name"></span> </p>
 
-    <p><strong>Payment Method:</strong> <span id="invoice-payment-method"></span></p>
+      <p><strong>Phone:</strong><span id="invoice-phone"></span> </p>
 
-    <div id="invoice-items"></div>
-  </div>
-  <!--Desicion button-->
-  <div id="footer-buttons">
-    <button onclick="cancelOrder()" class="cancel-btn">Cancel</button>
-    <button onclick="confirmOrder()" class="confirm-btn">Confirm
-      Order</button>
+      <p><strong>Address:</strong> <span id="invoice-address"></span></p>
+
+      <p><strong>Delivery Time:</strong> <span id="invoice-delivery-time"></span></p>
+
+      <p><strong>Payment Method:</strong> <span id="invoice-payment-method"></span></p>
+
+      <div id="invoice-items"></div>
+    </div>
+
+    <!--Desicion button-->
+    <div id="footer-buttons">
+      <button onclick="cancelOrder()" class="cancel-btn">Cancel</button>
+      <button onclick="confirmOrder()" class="confirm-btn">Confirm
+        Order</button>
+    </div>
   </div>
   <script src="checkout.js"></script>
 </body>

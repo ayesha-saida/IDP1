@@ -13,15 +13,16 @@ function updateCartDisplay() {
     cartItem.classList.add('cart-item');
     cartItem.innerHTML = `<img src="${item.img}" alt="${
       item.name
-    }"><div class="cart-item-details"><strong>${
+    }"> <div class="cart-item-details"> <strong>${
       item.name
-    }</strong><br>${item.price.toFixed(2)} x ${item.quantity} = ${(
+    }</strong> <br> ${item.price.toFixed(2)} x ${item.quantity} = ${(
       item.price * item.quantity
     ).toFixed(
       2
-    )}<div class="cart-controls"><button class="qty-btn" onclick="changeQuantity(${index}, -1)">−</button><button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button></div></div>`;
+    )} <div class="cart-controls"> <button class="qty-btn" onclick="changeQuantity(${index}, -1)">−</button> <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button> </div> </div>`;
     cartItemsEl.appendChild(cartItem);
-    /*This will auto hide invoice on cart clear */
+
+    /*This will auto hide invoice when cart is empty.*/
     if (cart.length === 0) {
       document.getElementById('invoice').style.display = 'none';
       document.getElementById('footer-buttons').style.display = 'none';
@@ -50,19 +51,21 @@ function changeQuantity(index, change) {
   updateCartDisplay();
 }
 
+//payment method selection
 document.querySelectorAll('#payment-options span').forEach(span => {
   span.addEventListener('click', () => {
     const customerName = document.getElementById('customer-name').value.trim();
-    const phone = document.getElementById('customer-phone').value.trim();
+    const customerPhone = document
+      .getElementById('customer-phone')
+      .value.trim();
     const address = document.getElementById('address').value.trim();
     const deliveryTime = document.getElementById('delivery-time').value;
 
-    if (!customerName || !phone || !address || !deliveryTime) {
-      alert(
-        'Please fill in name, phone, address, and delivery time before choosing payment.'
-      );
+    if (!customerName || !customerPhone || !address || !deliveryTime) {
+      alert('All fields are required.');
       return;
     }
+
     if (cart.length === 0) {
       alert('Cart is empty!');
       return;
@@ -72,12 +75,14 @@ document.querySelectorAll('#payment-options span').forEach(span => {
 
     document.getElementById('invoice-name').textContent = customerName;
 
-    document.getElementById('invoice-phone').textContent = phone;
+    document.getElementById('invoice-phone').textContent = customerPhone;
 
     document.getElementById('invoice-address').textContent = address;
+
     document.getElementById('invoice-delivery-time').textContent = new Date(
       deliveryTime
     ).toLocaleString();
+
     document.getElementById('invoice-payment-method').textContent =
       selectedPaymentMethod;
 
@@ -92,8 +97,10 @@ document.querySelectorAll('#payment-options span').forEach(span => {
     invoiceHTML += '</ul>';
 
     document.getElementById('invoice-items').innerHTML = invoiceHTML;
+
     document.getElementById('invoice').style.display = 'block';
-    document.getElementById('footer-buttons').style.display = 'flex'; /*block */
+
+    document.getElementById('footer-buttons').style.display = 'block ';
 
     // Remove previous selection highlight
     document.querySelectorAll('#payment-options span').forEach(el => {
@@ -117,14 +124,9 @@ function cancelOrder() {
 
 function confirmOrder() {
   const customerName = document.getElementById('customer-name').value.trim();
-  const phone = document.getElementById('customer-phone').value.trim();
+  const customerPhone = document.getElementById('customer-phone').value.trim();
   const address = document.getElementById('address').value.trim();
   const deliveryTime = document.getElementById('delivery-time').value;
-
-  if (!customerName || !phone || !address || !deliveryTime) {
-    alert('All fields are required.');
-    return;
-  }
 
   if (!selectedPaymentMethod) {
     alert('Please select a payment method.');
@@ -135,9 +137,11 @@ function confirmOrder() {
   cart = [];
   localStorage.removeItem('cart');
   localStorage.removeItem('invoice'); // remove invoice details
+  window.location.reload();
   updateCartDisplay();
+
   document.getElementById('invoice').style.display = 'none';
-  document.getElementById('footer-buttons').style.display = 'none';
+
   document.querySelectorAll('#payment-options span').forEach(el => {
     el.classList.remove('selected');
   });

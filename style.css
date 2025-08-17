@@ -360,7 +360,7 @@ header {
   .top-header {
     flex-direction: column;
     position: fixed;
-    top: -25px;
+    top: -5px;
     left: -250px; /* Hidden by default */
     height: 20%;
     line-height: 25px;
