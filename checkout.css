@@ -31,28 +31,46 @@ header {
 }
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: 25px;
   color: #222;
 }
 
-/* Address & Input Fields */
+/*Info. & Address form */
+.form-container {
+  background-color: #fff;
+  padding: 30px 49px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+.form-container h3 {
+  text-align: center;
+  margin-top: 0;
+}
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 17px;
+}
+
 #customer-name,
 #customer-phone,
 #address,
 #delivery-time {
   width: 100%;
-  max-width: 500px;
   padding: 10px;
-  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  border: 1px solid green;
   border-radius: 5px;
-  box-sizing: border-box;
-  margin-top: 5px;
+  font-size: 15px;
 }
 
 /* Cart Section */
 #cart-container {
   margin-top: 30px;
-  /* margin-left: 640px;*/
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
@@ -164,8 +182,6 @@ h3 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  /* justify-content: center;
- align-items: center;*/
 }
 
 #footer-buttons button {
@@ -198,7 +214,7 @@ h3 {
 
   .cart-item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .cart-controls {

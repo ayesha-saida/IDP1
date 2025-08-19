@@ -348,8 +348,15 @@ header {
   }
   /*Product list*/
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .customer-care ul {
+    flex-wrap: nowrap;
+  }
+  .customer-care li a {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -425,8 +432,10 @@ header {
   }
   /*Product list*/
   .product-grid {
-    flex-direction: column;
-    gap: 15px;
+    /*  flex-direction: column;*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   /*customer care*/
   .customer-care ul {
