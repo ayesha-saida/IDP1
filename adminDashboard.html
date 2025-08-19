@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="adminDash.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>ADMIN DASHBOARD</h2>
+      <nav>
+        <ul>
+          <li>Dashboard</li>
+          <li>Buyers</li>
+          <li>Sellers</li>
+          <li>Orders</li>
+          <li>Products</li>
+          <li>Logout</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>ADMIN DASHBOARD</h1>
+        <button class="logout-btn">Logout</button>
+      </header>
+
+      <section class="states">
+        <div class="card">
+
+          <p>Buyers</p>
+        </div>
+        <div class="card">
+
+          <p>Sellers</p>
+        </div>
+      </section>
+
+      <section class="tables">
+
+        <!-- Buyers Table -->
+        <div class="table-container">
+          <h3>Buyers</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Signup Date</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Kulsum</td>
+                <td>kulsum@gmail.com</td>
+                <td>01-03-2025</td>
+              </tr>
+
+              <tr>
+                <td>Priya</td>
+                <td>priya@gmail.com</td>
+                <td>10-02-2025</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sellers Table -->
+        <div class="table-container">
+          <h3>Sellers</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Signup Date</th>
+                <th>Products</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Maliha</td>
+                <td>maliha45@gmail.com</td>
+                <td>10-02-2025</td>
+                <td>Fruits</td>
+              </tr>
+              <tr>
+                <td>Dipty</td>
+                <td>diptypakhi@gamil.com</td>
+                <td>20-04-2025</td>
+                <td>Vegetables</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="table-container">
+          <h3>Orders</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Buyer</th>
+                <th>Product</th>
+                <th>Order Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Arpita</td>
+                <td>Vegetables</td>
+                <td>07-05-2025</td>
+                <td>Delivered</td>
+              </tr>
+              <tr>
+                <td>Taznima</td>
+                <td>Leaf vegetables</td>
+                <td>19-08-2025</td>
+                <td>Pending</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-container">
+          <h3>Products</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Seller</th>
+                <th>Upload Date</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Leaf Vegetables</td>
+                <td>Mukta</td>
+                <td>22-05-2025</td>
+              </tr>
+
+              <tr>
+                <td>Vegetables</td>
+                <td>Dipty</td>
+                <td>15-08-2025</td>
+              </tr>
+
+              <tr>
+                <td>Fruits</td>
+                <td>Maliha</td>
+                <td>17-08-2025</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <script src="adminDash.js"></script>
+</body>
+
+</html>
