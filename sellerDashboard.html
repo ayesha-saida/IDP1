@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Dashboard</title>
+  <link rel="stylesheet" href="sellerDashboard.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <h1>Seller Dashboard</h1>
+    <span>Welcome,seller! <!--seller name--></span>
+
+    <div class="summary-container">
+      <div class="card">
+        <h2>
+          <!--total sales number -->
+        </h2>
+        <p>Total sales: 5</p>
+        <p>
+          Orders: 7
+        </p>
+      </div>
+      <div class="card">
+        <h2>
+          <!--active_listings-->
+        </h2>
+        <p>Active Listings</p>
+      </div>
+      <div class="card">
+        <h3>Notifications</h3>
+        <div class="notification">
+          <strong>New order arrived</strong><br />
+
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <form action="sellerUpload.html"><button type="submit">Upload Product</button></form>
+      <form action="uploadHistory.html"><button type="submit">Product History</button></form>
+      <form action="orders.html"><button type="submit">View Orders Received</button></form>
+      <form action="#"><button type="submit">Logout</button></form>
+    </div>
+
+    <div class="orders">
+      <h2>Recent Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td> Vegetables </td>
+            <td> 10 - 08 - 2025</td>
+            <td> Dipty </td>
+            <td> 370 tk </td>
+          </tr>
+          <tr>
+            <td> Fruits </td>
+            <td> 15 - 08 - 2025</td>
+            <td> Mukta </td>
+            <td> 1020 tk </td>
+          </tr>
+          <tr>
+            <td> Leaf vegetables </td>
+            <td> 17 - 08 - 2025</td>
+            <td> Arpita </td>
+            <td> 450 tk </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
